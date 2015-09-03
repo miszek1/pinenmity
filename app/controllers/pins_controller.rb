@@ -1,5 +1,5 @@
 class PinsController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, :unless => :devise_controller?, except: [:index, :show]
   before_action :set_pin, only: [:show, :edit, :update, :destroy]
 
   def index
