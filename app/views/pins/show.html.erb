@@ -16,6 +16,21 @@
         Edit
       <% end %>
         <% end %>
+        <div class="comment_form_container">
+            <%= form_for([@pin,Comment.new]) do | f |%>
+            <%= f.text_field :body %> 
+            <%= f.submit %> 
+            <%end%>
+
+        </div>
+        <div class="comments">          
+          <% @pin.comments.each do |comment| %>
+            <div><%= comment.body %></div>
+            <div>comment by: <%= comment.user.name %></div>
+            
+          <% end %>
+
+        </div>
 
       </div>
     </div>
