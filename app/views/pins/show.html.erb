@@ -16,7 +16,7 @@
         Edit
       <% end %>
         <% end %>
-        <% if current_user.likes?(@pin) %>
+        <% if signed_in?&&current_user.likes?(@pin) %>
         <%= link_to "unlike", unlike_pin_path(@pin) %>
         <%else%>
         <%= link_to "like", like_pin_path(@pin) %>
