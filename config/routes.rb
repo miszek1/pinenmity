@@ -9,6 +9,11 @@ Rails.application.routes.draw do
   get "about" => "pages#about#"
   get "mission" => "pages#mission"
   get "profile/:id" => "profile#show", as: :profile
+  get "follow/user/:id" => "profile#follow", as: :follow_user
+  get "unfollow/user/:id" => "profile#unfollow", as: :unfollow_user
+  get "like/pin/:id" => "pins#like" , as: :like_pin 
+  get "unlike/pin/:id" => "pins#unlike" , as: :unlike_pin 
+
       # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

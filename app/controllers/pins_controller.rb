@@ -1,6 +1,6 @@
 class PinsController < ApplicationController
   before_action :authenticate_user!, :unless => :devise_controller?, except: [:index, :show]
-  before_action :set_pin, only: [:show, :edit, :update, :destroy]
+  before_action :set_pin, only: [:show, :edit, :update, :destroy, :like, :unlike]
 
   def index
    @pins = Pin.all.order("created_at DESC").paginate(:page => params[:page], :per_page => 30)
@@ -37,7 +37,14 @@ class PinsController < ApplicationController
     @pin.destroy
     redirect_to pins_url
   end
-
+def like
+    current_user.like!(@pin)
+    redirect_to pin_path(@pin)
+  end
+  def unlike
+    current_user.unlike!(@pin)
+    redirect_to pin_path(@pin)
+  end
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_pin
