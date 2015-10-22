@@ -1,5 +1,5 @@
 <%= @user.name %>
-<% if current_user.follows?(@user) %>
+<% if signed_in?&&current_user.follows?(@user) %>
 <%= link_to "unfollow #{@user.name}", unfollow_user_path(@user) %>
 <% else %>
 <%= link_to "follow #{@user.name}", follow_user_path(@user) %>
