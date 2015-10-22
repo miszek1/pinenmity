@@ -1,5 +1,6 @@
+@import "bootstrap-sprockets";
+@import "config"; // Overwrite bootstrap variables here!
 @import "bootstrap";
-
 
 body {
 	background: #E9E9E9;
