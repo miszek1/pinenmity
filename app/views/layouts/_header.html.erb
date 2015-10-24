@@ -14,16 +14,22 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li class="active"><%= link_to "Log in", new_user_session_path, class: "btn btn-primary btn-sm" %> <span class="sr-only">(current)</span></a></li>
+         <li class="active"><%= link_to "Log in", new_user_session_path, class: "btn btn-primary btn-sm" %> <span class="sr-only">(current)</span></a></li>
         <li><%= link_to "Sign up", new_user_registration_path, class: "btn btn-primary btn-sm" %></a></li>
-        
-      </ul>
+         </ul>
       <form class="navbar-form navbar-left" role="search">
         <div class="form-group">
           <input type="text" class="form-control" placeholder="Search">
-        </div>
+          </div>
         <button type="search" class="btn btn-default">Search</button>
       </form>
+      <div>
+           <%= link_to new_pin_path do %>
+             <i class="fa fa-thumb-tack"></i> New Pin             
+            <% end %>
+
+          </div>
+           
       <div class="collapse navbar-collapse navbar-ex1-collapse">
       <ul class="nav navbar-nav navbar-right">
         <li><%= link_to "Home", root_path %></li>
