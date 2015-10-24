@@ -8,6 +8,17 @@
 <%= link_to raw("<i class=\"fa fa-hand-o-right\"></i>
 follow #{@user.name}"), follow_user_path(@user), class: "btn btn-primary" %>
 <% end %>
+<div class = "row"> 
+		<div class = "col-lg-4 Profile-data">
+		Pins <%= @user.pins.count %>			
+	</div>
+	<div class = "col-lg-4 Profile-data">
+		Followers <%= Follow.where(followable_id: User.first.id).count %>
+	</div>
+	<div class = "col-lg-4 Profile-data">
+		Following
+	</div>
+	</div>
   </div>
 </div>
 
