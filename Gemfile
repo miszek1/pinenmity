@@ -19,6 +19,7 @@ gem 'masonry-rails', '~> 0.2.0'
 gem 'will_paginate', '~> 3.0.6'
 gem 'will_paginate-bootstrap'
 gem "socialization"
+gem 'font-awesome-rails'
 
 group :development, :test do
      gem 'sqlite3'

@@ -1,7 +1,14 @@
-<%= @user.name %>
+<div class = "container">
+<div class="panel panel-default">
+ <div class="panel-heading"><%= @user.name %></div>
+  <div class="panel-body">
 <% if signed_in?&&current_user.follows?(@user) %>
-<%= link_to "unfollow #{@user.name}", unfollow_user_path(@user) %>
+<%= link_to raw("<i class=\"fa fa-hand-o-left\"></i> unfollow #{@user.name}"), unfollow_user_path(@user),class: "btn btn-primary" %>
 <% else %>
-<%= link_to "follow #{@user.name}", follow_user_path(@user) %>
+<%= link_to raw("<i class=\"fa fa-hand-o-right\"></i>
+follow #{@user.name}"), follow_user_path(@user), class: "btn btn-primary" %>
 <% end %>
-<%= link_to @user.name, profile_path(@user) %>
+  </div>
+</div>
+
+</div>
