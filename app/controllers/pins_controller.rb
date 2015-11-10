@@ -37,10 +37,12 @@ class PinsController < ApplicationController
     @pin.destroy
     redirect_to pins_url
   end
-def like
+
+  def like
     current_user.like!(@pin)
     redirect_to pin_path(@pin)
   end
+
   def unlike
     current_user.unlike!(@pin)
     redirect_to pin_path(@pin)
